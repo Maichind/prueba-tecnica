@@ -1,2 +1,24 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
 @import "tailwindcss";
+
+@theme {
+  --font-sans: 'Inter', sans-serif;
+
+  --color-gray-bg: #F4F4F5;
+  --color-text-dark: #1C274C;
+  --color-brand-red: #E4002B;
+  --color-text-muted: #A6A2A2;
+  --color-placeholder: #BDBDBD;
+  --color-text-primary: #343A40;
+
+  --shadow-card: 0px 2px 4px 0px rgba(0, 0, 0, 0.2);
+}
+
+@layer base {
+  body {
+    font-family: var(--font-sans);
+    background-color: var(--color-gray-bg);
+    color: var(--color-text-primary);
+  }
+}
