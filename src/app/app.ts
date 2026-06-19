@@ -1,8 +1,9 @@
 import { Component, signal } from '@angular/core';
+import { ImagePlaceholder } from "./shared/atoms/image-placeholder/image-placeholder";
 
 @Component({
   selector: 'app-root',
-  imports: [],
+  imports: [ImagePlaceholder],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
