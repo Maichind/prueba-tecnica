@@ -1,0 +1,23 @@
+<section aria-labelledby="articles-title">
+  <div class="flex flex-col gap-12">
+
+    <div class="flex flex-col gap-6">
+      <h2 id="articles-title" class="text-3xl md:text-5xl font-bold text-black leading-8 md:leading-14.5">
+        {{ title }}
+      </h2>
+
+      <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-2.5">
+        <p class="text-lg leading-6.75 text-black">{{ subtitle }}</p>
+        <div class="min-w-75">
+          <app-search-input />
+        </div>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      @for (article of articles; track article.imageAlt; let i = $index) {
+      <app-article-card [article]="article" [class.hidden]="i >= 4" [class.lg:block]="i >= 4" />
+      }
+    </div>
+  </div>
+</section>
