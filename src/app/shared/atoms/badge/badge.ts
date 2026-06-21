@@ -7,5 +7,5 @@ import { Component, Input } from '@angular/core';
   templateUrl: './badge.html',
 })
 export class Badge {
-  @Input() label: string = '';
+  @Input() label = '';
 }
