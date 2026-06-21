@@ -13,7 +13,7 @@
   --color-placeholder: #BDBDBD;
   --color-text-primary: #343A40;
 
-  --shadow-card: 0px 2px 4px 0px rgba(0, 0, 0, 0.2);
+  --shadow-card: 0px 2px 4px 0px #00000033;
 }
 
 @layer base {

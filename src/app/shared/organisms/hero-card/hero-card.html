@@ -1,0 +1,32 @@
+<section aria-labelledby="hero-title">
+  <div class="bg-white rounded-lg p-8 flex flex-col lg:flex-row gap-8" 
+    style="box-shadow: var(--shadow-card);">
+
+    <div class="w-full lg:flex-1 lg:self-stretch">
+      <app-image-placeholder [alt]="hero.imageAlt" aspectRatio="video" />
+    </div>
+
+    <div class="flex flex-col gap-4 lg:flex-1">
+      <app-badge [label]="hero.badge" />
+
+      <h2 id="hero-title" class="text-2xl font-bold text-text-primary leading-7">
+        {{ hero.title }}
+      </h2>
+
+      <div class="flex flex-col lg:mb-2">
+        <p class="text-base text-text-primary leading-6">
+          {{ hero.description }}
+        </p>
+        @if (hero.descriptionExtra) {
+          <p class="hidden lg:block text-base text-text-primary leading-6">
+            {{ hero.descriptionExtra }}
+          </p>
+        }
+      </div>
+
+      <div class="flex justify-end mt-auto">
+        <app-button [label]="hero.ctaLabel" />
+      </div>
+    </div>
+  </div>
+</section>
