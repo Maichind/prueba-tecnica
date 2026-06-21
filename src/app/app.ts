@@ -5,11 +5,13 @@ import { SearchInput } from "./shared/atoms/search-input/search-input";
 import { ImagePlaceholder } from "./shared/atoms/image-placeholder/image-placeholder";
 
 import { IArticle } from '@interfaces/article.interface';
+import { IGalleryItem } from '@interfaces/gallery-item.interface';
 import { ArticleCard } from "./shared/molecules/article-card/article-card";
+import { GalleryCard } from "./shared/molecules/gallery-card/gallery-card";
 
 @Component({
   selector: 'app-root',
-  imports: [ImagePlaceholder, Badge, Button, SearchInput, ArticleCard],
+  imports: [ImagePlaceholder, Badge, Button, SearchInput, ArticleCard, GalleryCard],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
@@ -21,5 +23,12 @@ export class App {
     category: 'Lorem ipsum dolor sit amet.',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis tellus. Nullam quis imperdiet augue. Vestibulum auctor ornare leo, non suscipit magna interdum eu. Curabitur pellentesque nibh nibh, at maximus ante fermentum sit amet. Pellentesque commodo lacus at sodales sodales. Quisque sagittis orci ut diam condimentum, vel euismod erat placerat. In iaculis arcu eros, eget tempus orci facilisis id.',
     imageAlt: 'Imagen del artículo 1',
+  };
+
+  galleryItem: IGalleryItem = {
+    title: 'Lorem ipsum',
+    subtitle: 'Lorem ipsum dolor sit amet consectetur.',
+    ctaLabel: 'Lorem ipsum',
+    imageAlt: 'Imagen de galería 1',
   };
 }
