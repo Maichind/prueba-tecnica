@@ -1,0 +1,29 @@
+<section aria-labelledby="gallery-title">
+  <div class="flex flex-col gap-12">
+    <div class="flex flex-col gap-6">
+      <h2 id="gallery-title" class="text-3xl md:text-5xl font-bold text-black leading-8 md:leading-14.5">
+        {{ title }}
+      </h2>
+      <p class="text-base text-black leading-6">
+        {{ description }}
+      </p>
+    </div>
+
+    <div class="lg:hidden overflow-hidden">
+      <div class="flex gap-8 overflow-x-auto scrollbar-hide snap-x snap-mandatory" role="region"
+        aria-label="Carrusel de galería" tabindex="0">
+        @for (item of items; track item.imageAlt) {
+        <div class="w-[67.5%] md:w-[55%] shrink-0 snap-start first:ml-0">
+          <app-gallery-card [item]="item" />
+        </div>
+        }
+      </div>
+    </div>
+
+    <div class="hidden lg:grid lg:grid-cols-4 gap-8">
+      @for (item of items; track item.imageAlt) {
+      <app-gallery-card [item]="item" />
+      }
+    </div>
+  </div>
+</section>
