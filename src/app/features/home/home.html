@@ -1,0 +1,23 @@
+<main>  
+  <div class="max-w-[1542px] flex flex-col mx-5 md:mx-8 2xl:mx-auto my-8 md:my-12 2xl:my-24">
+    <app-hero-card [hero]="hero" />
+  </div>
+  
+  <div class="w-full flex justify-center bg-white">
+    <div class="max-w-[1542px] flex flex-col mx-5 md:mx-8 2xl:mx-auto my-8 md:my-12 2xl:my-24">
+      <app-article-grid
+        [title]="articlesTitle"
+        [subtitle]="articlesSubtitle"
+        [articles]="articles" />
+    </div>
+  </div>
+  
+  <div class="w-full bg-white">
+    <div class="max-w-[1542px] flex flex-col mx-5 md:mx-8 2xl:mx-auto py-8 md:py-12 2xl:py-24">
+      <app-gallery-carousel
+        [title]="galleryTitle"
+        [description]="galleryDescription"
+        [items]="galleryItems" />
+    </div>
+  </div>
+</main>

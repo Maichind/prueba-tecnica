@@ -5,6 +5,7 @@ import { GalleryCard } from "../../molecules/gallery-card/gallery-card";
 
 @Component({
   selector: 'app-gallery-carousel',
+  standalone: true,
   imports: [CommonModule, GalleryCard],
   templateUrl: './gallery-carousel.html',
 })
