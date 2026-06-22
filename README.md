@@ -1,59 +1,82 @@
-# PruebaTecnica
+# Prueba Técnica — Maquetación Frontend
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.2.2.
+Solución de maquetación pixel perfect desarrollada con Angular 20 y Tailwind CSS 4.
 
-## Development server
-
-To start a local development server, run:
+## 🚀 Instalación y uso
 
 ```bash
+# Clonar el repositorio
+git clone 
+cd prueba-tecnica
+
+# Instalar dependencias
+npm install
+
+# Iniciar servidor de desarrollo
 ng serve
+
+# Abrir en el navegador
+http://localhost:4200
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## 🏗️ Arquitectura
 
-## Code scaffolding
+El proyecto sigue **Atomic Design** con componentes Angular standalone:
+src/app/
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+├── shared/
+│   ├── atoms/              # Componentes base indivisibles
+│   │   ├── badge/          # Ícono calendario + label de categoría
+│   │   ├── button/         # Botón CTA con variant primary
+│   │   ├── search-input/   # Input de búsqueda con ícono lupa
+│   │   └── image-placeholder/ # Placeholder de imagen con aspect-ratio
+│   ├── molecules/          # Combinación de átomos
+│   │   ├── article-card/   # Tarjeta de artículo
+│   │   └── gallery-card/   # Tarjeta de galería con overlay gradiente
+│   ├── organisms/          # Secciones completas
+│   │   ├── hero-card/      # Sección 1 — Hero destacado
+│   │   ├── article-grid/   # Sección 2 — Grid de artículos
+│   │   └── gallery-carousel/ # Sección 3 — Carrusel de galería
+│   └── interfaces/         # Tipos TypeScript
+│       ├── hero.interface.ts
+│       ├── article.interface.ts
+│       └── gallery-item.interface.ts
+├── features/
+│   └── home/               # Página principal
+└── constants/
+└── mock-data.ts        # Datos de prueba
 
-```bash
-ng generate component component-name
-```
+## 📐 Breakpoints
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+| Nombre | Valor | Descripción |
+|--------|-------|-------------|
+| mobile | 0px – 767px | 1 columna · carrusel táctil |
+| md | ≥ 768px | 2 columnas · carrusel táctil |
+| lg | ≥ 1024px | 3–4 columnas · grid estático |
+| 2xl | ≥ 1536px | Contenedor centrado máx. 1542px |
 
-```bash
-ng generate --help
-```
+## 🎨 Design System
 
-## Building
+### Colores
+| Token | Valor | Uso |
+|-------|-------|-----|
+| `--color-brand-red` | #E4002B | Botón CTA primario |
+| `--color-gray-bg` | #F4F4F5 | Fondo página y sección 1 |
+| `--color-text-primary` | #343A40 | Texto cuerpo |
+| `--color-text-dark` | #1C274C | Títulos |
+| `--color-text-muted` | #A6A2A2 | Texto secundario |
+| `--color-placeholder` | #BDBDBD | Fondo imágenes placeholder |
+| `--shadow-card` | 0px 2px 4px 0px #00000033 | Sombra hero card |
 
-To build the project run:
+### Tipografía
+- **Inter** — texto general (400, 500, 600, 700, 800, 900)
+- **Figtree Bold 700** — texto IMAGE en placeholders
 
-```bash
-ng build
-```
+## ✅ Decisiones técnicas
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+- **Tailwind CSS 4** configurado via `.postcssrc.json` con `@tailwindcss/postcss`
+- **Tokens de diseño** definidos en `@theme` en `styles.css`
+- **Carrusel** implementado con scroll táctil nativo + `snap-x snap-mandatory` sin librerías externas
+- **Accesibilidad** — HTML semántico, `role="search"`, `aria-labelledby`, `aria-label` en botones e imágenes
+- **Imágenes** — `div[role="img"]` con `aria-label` para placeholders
+- **Path aliases** configurados en `tsconfig.json` (`@atoms`, `@molecules`, `@organisms`, `@interfaces`, `@constants`)
