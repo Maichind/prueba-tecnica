@@ -1,6 +1,14 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
 
+/**
+ * @atom ImagePlaceholder
+ * Simula una imagen con fondo gris y texto IMAGE centrado.
+ * Soporta tres aspect-ratios: video (16:9), square (1:1), portrait (3:4).
+ *
+ * @example
+ * <app-image-placeholder alt="Foto del producto" aspectRatio="video" />
+ */
 @Component({
   selector: 'app-image-placeholder',
   standalone: true,

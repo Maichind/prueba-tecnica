@@ -7,6 +7,10 @@ import { HeroCard } from "../../shared/organisms/hero-card/hero-card";
 import { ArticleGrid } from "../../shared/organisms/article-grid/article-grid";
 import { GalleryCarousel } from "../../shared/organisms/gallery-carousel/gallery-carousel";
 
+/**
+ * @page Home
+ * Página principal — ensambla las 3 secciones: HeroCard, ArticleGrid y GalleryCarousel.
+ */
 @Component({
   selector: 'app-home',
   standalone: true,
