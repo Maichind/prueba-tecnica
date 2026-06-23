@@ -12,7 +12,7 @@
     <div class="lg:hidden overflow-hidden">
       <div class="flex gap-8 overflow-x-auto scrollbar-hide snap-x snap-mandatory" role="region"
         aria-label="Carrusel de galería" tabindex="0">
-        @for (item of items; track item.imageAlt) {
+        @for (item of items; track item.id) {
         <div class="w-[67.5%] md:w-[51.15%] shrink-0 snap-start first:ml-0">
           <app-gallery-card [item]="item" />
         </div>
@@ -21,7 +21,7 @@
     </div>
 
     <div class="hidden lg:grid lg:grid-cols-4 gap-8">
-      @for (item of items; track item.imageAlt) {
+      @for (item of items; track item.id) {
       <app-gallery-card [item]="item" />
       }
     </div>

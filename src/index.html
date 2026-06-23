@@ -1,14 +1,55 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="utf-8">
-  <title>Prueba Tecnica</title>
-  <base href="/">
+  <title>Prueba Técnica Frontend RIU | Angular & Maquetación Responsive</title>
+  <meta name="description" content="Prueba técnica: Maquetación responsive desarrollada en Angular con Tailwind, optimización de performance y buenas prácticas de SEO técnico." />
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <base href="/">
+
+  <link rel="canonical" href="https://tech-test-md.netlify.app/" />
+
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Figtree:wght@700&display=swap" rel="stylesheet">
+
+  <!-- Preload solo Inter 700: font crítica above the fold (LCP) -->
+  <!-- Nota: self-hosting con .woff2 + @font-face sería la solución óptima -->
+  <link rel="preload"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Figtree:wght@700&display=swap"
+    as="style"
+    onload="this.onload=null;this.rel='stylesheet'">
+  <noscript>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Figtree:wght@700&display=swap" 
+      rel="stylesheet">
+  </noscript>
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Prueba Técnica Frontend RIU | Maquetación responsive" />
+  <meta property="og:description" content="Maquetación responsive en Angular con optimización de performance y SEO técnico." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://tech-test-md.netlify.app/" />
+  <meta property="og:image" content="https://tech-test-md.netlify.app/test-bg.png" />
+
+  <!-- Twitter Cards -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Prueba Técnica Frontend RIU | Maquetación responsive" />
+  <meta name="twitter:description" content="Maquetación responsive en Angular optimizada para performance y SEO." />
+  <meta name="twitter:image" content="https://tech-test-md.netlify.app/test-bg.png" />
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "RIU Prueba Técnica",
+    "url": "https://tech-test-md.netlify.app/",
+    "description": "Prueba técnica frontend en Angular con Maquetación responsive y optimización SEO",
+    "inLanguage": "es"
+  }
+  </script>
 </head>
 <body>
   <app-root></app-root>

@@ -15,8 +15,11 @@
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      @for (article of articles; track article.imageAlt; let i = $index) {
-      <app-article-card [article]="article" [class.hidden]="i >= 4" [class.lg:block]="i >= 4" />
+      @for (article of articles; track article.id; let i = $index) {
+        <app-article-card 
+          [article]="article" 
+          [class.article-desktop-only]="i >= 4"
+        />
       }
     </div>
   </div>

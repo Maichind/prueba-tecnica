@@ -1,4 +1,3 @@
-import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
 
 /**
@@ -12,7 +11,7 @@ import { Component, Input } from '@angular/core';
 @Component({
   selector: 'app-image-placeholder',
   standalone: true,
-  imports: [CommonModule],
+  imports: [],
   templateUrl: './image-placeholder.html',
 })
 export class ImagePlaceholder {

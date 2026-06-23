@@ -13,36 +13,42 @@ export const HERO_DATA: IHero = {
 
 export const ARTICLES_DATA: IArticle[] = [
   {
+    id: 'article-1',
     title: 'Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et.',
     category: 'Lorem ipsum dolor sit amet.',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis tellus. Nullam quis imperdiet augue. Vestibulum auctor ornare leo, non suscipit magna interdum eu. Curabitur pellentesque nibh nibh, at maximus ante fermentum sit amet. Pellentesque commodo lacus at sodales sodales. Quisque sagittis orci ut diam condimentum, vel euismod erat placerat. In iaculis arcu eros, eget tempus orci facilisis id.',
     imageAlt: 'Imagen del artículo 1',
   },
   {
+    id: 'article-2',
     title: 'Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et.',
     category: 'Lorem ipsum dolor sit amet.',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis tellus. Nullam quis imperdiet augue. Vestibulum auctor ornare leo, non suscipit magna interdum eu. Curabitur pellentesque nibh nibh, at maximus ante fermentum sit amet. Pellentesque commodo lacus at sodales sodales. Quisque sagittis orci ut diam condimentum, vel euismod erat placerat. In iaculis arcu eros, eget tempus orci facilisis id.',
     imageAlt: 'Imagen del artículo 2',
   },
   {
+    id: 'article-3',
     title: 'Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et.',
     category: 'Lorem ipsum dolor sit amet.',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis tellus. Nullam quis imperdiet augue. Vestibulum auctor ornare leo, non suscipit magna interdum eu. Curabitur pellentesque nibh nibh, at maximus ante fermentum sit amet. Pellentesque commodo lacus at sodales sodales. Quisque sagittis orci ut diam condimentum, vel euismod erat placerat. In iaculis arcu eros, eget tempus orci facilisis id.',
     imageAlt: 'Imagen del artículo 3',
   },
   {
+    id: 'article-4',
     title: 'Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et.',
     category: 'Lorem ipsum dolor sit amet.',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis tellus. Nullam quis imperdiet augue. Vestibulum auctor ornare leo, non suscipit magna interdum eu. Curabitur pellentesque nibh nibh, at maximus ante fermentum sit amet. Pellentesque commodo lacus at sodales sodales. Quisque sagittis orci ut diam condimentum, vel euismod erat placerat. In iaculis arcu eros, eget tempus orci facilisis id.',
     imageAlt: 'Imagen del artículo 4',
   },
   {
+    id: 'article-5',
     title: 'Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et.',
     category: 'Lorem ipsum dolor sit amet.',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis tellus. Nullam quis imperdiet augue. Vestibulum auctor ornare leo, non suscipit magna interdum eu. Curabitur pellentesque nibh nibh, at maximus ante fermentum sit amet. Pellentesque commodo lacus at sodales sodales. Quisque sagittis orci ut diam condimentum, vel euismod erat placerat. In iaculis arcu eros, eget tempus orci facilisis id.',
     imageAlt: 'Imagen del artículo 5',
   },
   {
+    id: 'article-6',
     title: 'Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et.',
     category: 'Lorem ipsum dolor sit amet.',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis tellus. Nullam quis imperdiet augue. Vestibulum auctor ornare leo, non suscipit magna interdum eu. Curabitur pellentesque nibh nibh, at maximus ante fermentum sit amet. Pellentesque commodo lacus at sodales sodales. Quisque sagittis orci ut diam condimentum, vel euismod erat placerat. In iaculis arcu eros, eget tempus orci facilisis id.',
@@ -52,24 +58,28 @@ export const ARTICLES_DATA: IArticle[] = [
 
 export const GALLERY_DATA: IGalleryItem[] = [
   {
+    id: 'item-1',
     title: 'Lorem ipsum',
     subtitle: 'Lorem ipsum dolor sit amet consectetur.',
     ctaLabel: 'Lorem ipsum',
     imageAlt: 'Imagen de galería 1',
   },
   {
+    id: 'item-2',
     title: 'Lorem ipsum',
     subtitle: 'Lorem ipsum dolor sit amet consectetur.',
     ctaLabel: 'Lorem ipsum',
     imageAlt: 'Imagen de galería 2',
   },
   {
+    id: 'item-3',
     title: 'Lorem ipsum',
     subtitle: 'Lorem ipsum dolor sit amet consectetur.',
     ctaLabel: 'Lorem ipsum',
     imageAlt: 'Imagen de galería 3',
   },
   {
+    id: 'item-4',
     title: 'Lorem ipsum',
     subtitle: 'Lorem ipsum dolor sit amet consectetur.',
     ctaLabel: 'Lorem ipsum',
