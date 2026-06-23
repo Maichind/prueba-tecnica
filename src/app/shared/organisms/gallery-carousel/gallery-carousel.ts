@@ -1,4 +1,9 @@
-import { Component, Input } from '@angular/core';
+import { 
+  Component, 
+  ElementRef, 
+  Input, 
+  ViewChild 
+} from '@angular/core';
 import { IGalleryItem } from '@interfaces/gallery-item.interface';
 import { GalleryCard } from "../../molecules/gallery-card/gallery-card";
 
@@ -20,4 +25,31 @@ export class GalleryCarousel {
   @Input() title = '';
   @Input() description = '';
   @Input() items: IGalleryItem[] = [];
+
+  @ViewChild('carouselTrack') carouselTrack!: ElementRef<HTMLDivElement>;
+
+  activeIndex = 0;
+
+  goTo(index: number): void {
+    this.activeIndex = index;
+    const track = this.carouselTrack.nativeElement;
+    const cardWidth = track.scrollWidth / this.items.length;
+    track.scrollTo({ left: cardWidth * index, behavior: 'smooth' });
+  }
+
+  scrollNext(): void {
+    const next = Math.min(this.activeIndex + 1, this.items.length - 1);
+    this.goTo(next);
+  }
+
+  scrollPrev(): void {
+    const prev = Math.max(this.activeIndex - 1, 0);
+    this.goTo(prev);
+  }
+
+  onScroll(): void {
+    const track = this.carouselTrack.nativeElement;
+    const cardWidth = track.scrollWidth / this.items.length;
+    this.activeIndex = Math.round(track.scrollLeft / cardWidth);
+  }
 }

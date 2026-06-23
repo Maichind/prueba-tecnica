@@ -9,14 +9,93 @@
       </p>
     </div>
 
-    <div class="lg:hidden overflow-hidden">
-      <div class="flex gap-8 overflow-x-auto scrollbar-hide snap-x snap-mandatory" role="region"
-        aria-label="Carrusel de galería" tabindex="0">
-        @for (item of items; track item.id) {
-        <div class="w-[67.5%] md:w-[51.15%] shrink-0 snap-start first:ml-0">
-          <app-gallery-card [item]="item" />
+    <div class="lg:hidden">
+      <div
+        role="region"
+        aria-roledescription="carousel"
+        aria-labelledby="gallery-title"
+        class="relative"
+      >
+        <div
+          aria-live="polite"
+          aria-atomic="true"
+          class="sr-only"
+        >
+          Slide {{ activeIndex + 1 }} de {{ items.length }}: {{ items[activeIndex]?.title }}
         </div>
-        }
+
+        <button
+          type="button"
+          (click)="scrollPrev()"
+          [attr.aria-disabled]="activeIndex === 0"
+          aria-label="Slide anterior"
+          class="absolute left-2 top-1/2 -translate-y-1/2 z-10
+            flex items-center justify-center w-8 h-8 rounded-full bg-white border 
+            border-gray-300 shadow-sm opacity-80 hover:opacity-100
+            focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-red
+            disabled:opacity-40"
+        >
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+
+        <div
+          #carouselTrack
+          class="flex gap-8 overflow-x-auto scrollbar-hide snap-x snap-mandatory outline-none"
+          (keydown.arrowRight)="scrollNext()"
+          (keydown.arrowLeft)="scrollPrev()"
+          (scroll)="onScroll()"
+          tabindex="0"
+          role="group"
+        >
+          @for (item of items; track item.id; let i = $index) {
+            <div
+              class="w-[67.5%] md:w-[51.15%] shrink-0 snap-start"
+              role="group"
+              aria-roledescription="slide"
+              [attr.aria-label]="'Slide ' + (i + 1) + ' de ' + items.length"
+              [attr.tabindex]="i === activeIndex ? 0 : -1"
+            >
+              <app-gallery-card [item]="item" />
+            </div>
+          }
+        </div>
+
+        <button
+          type="button"
+          (click)="scrollNext()"
+          [attr.aria-disabled]="activeIndex === items.length - 1"
+          aria-label="Siguiente slide"
+          class="absolute right-2 top-1/2 -translate-y-1/2 z-10
+            flex items-center justify-center w-8 h-8 rounded-full bg-white border 
+            border-gray-300 shadow-sm opacity-80 hover:opacity-100
+            focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-red
+            disabled:opacity-40"
+        >
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+
+        <div
+          class="flex justify-center gap-2 mt-4"
+          role="tablist"
+          aria-label="Navegación del carrusel"
+        >
+          @for (item of items; track item.id; let i = $index) {
+            <button
+              type="button"
+              role="tab"
+              [attr.aria-selected]="activeIndex === i"
+              [attr.aria-label]="'Ir al slide ' + (i + 1) + ': ' + item.title"
+              (click)="goTo(i)"
+              class="w-2 h-2 rounded-full transition-colors duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-red"
+              [class.bg-brand-red]="activeIndex === i"
+              [class.bg-gray-300]="activeIndex !== i">
+            </button>
+          }
+        </div>       
       </div>
     </div>
 
