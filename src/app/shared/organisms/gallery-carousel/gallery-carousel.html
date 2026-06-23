@@ -90,9 +90,15 @@
               [attr.aria-selected]="activeIndex === i"
               [attr.aria-label]="'Ir al slide ' + (i + 1) + ': ' + item.title"
               (click)="goTo(i)"
-              class="w-2 h-2 rounded-full transition-colors duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-red"
-              [class.bg-brand-red]="activeIndex === i"
-              [class.bg-gray-300]="activeIndex !== i">
+              class="w-6 h-6 flex items-center justify-center 
+                focus-visible:outline-2 focus-visible:outline-offset-2 
+                focus-visible:outline-brand-red cursor-pointer"
+            >
+              <span
+                class="w-2 h-2 rounded-full transition-colors duration-200"
+                [class.bg-brand-red]="activeIndex === i"
+                [class.bg-gray-300]="activeIndex !== i"
+              ></span>
             </button>
           }
         </div>       

@@ -49,7 +49,22 @@ export class GalleryCarousel {
 
   onScroll(): void {
     const track = this.carouselTrack.nativeElement;
-    const cardWidth = track.scrollWidth / this.items.length;
-    this.activeIndex = Math.round(track.scrollLeft / cardWidth);
+    const children = Array.from(track.children) as HTMLElement[];
+    const containerCenter = track.scrollLeft + track.clientWidth / 2;
+
+    let closestIndex = 0;
+    let closestDistance = Infinity;
+
+    children.forEach((child, i) => {
+      const childCenter = child.offsetLeft + child.offsetWidth / 2;
+      const distance = Math.abs(containerCenter - childCenter);
+
+      if (distance < closestDistance) {
+        closestDistance = distance;
+        closestIndex = i;
+      }
+    });
+
+    this.activeIndex = closestIndex;
   }
 }
